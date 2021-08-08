@@ -13,6 +13,7 @@ function LoginPage() {
     if (localData.users[username]) {
       switch(localData.users[username].role) {
         case 'admin': history.push("/admin-landing"); break;
+        case 'buyer': history.push("/buyer-landing"); break;
       }
     }
   }

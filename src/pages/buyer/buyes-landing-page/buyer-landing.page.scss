@@ -1,0 +1,22 @@
+.buyer-landing-content-wrapper {
+	width: calc(100% - 32px);
+	height: calc(100vh - (54px + 32px));
+	background-color: #e7e7e7;
+	padding: 16px;
+
+  .transaction-history-btn {
+    border: none;
+    width: 140px;
+    height: 30px;
+    background-color: #545455;
+    color: white;
+    margin-bottom: 30px;
+    display: block;
+    margin-left: auto;
+  }
+
+  .product-list {
+    display: flex;
+    justify-content: space-around;
+  }
+}

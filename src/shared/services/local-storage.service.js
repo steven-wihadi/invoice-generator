@@ -22,7 +22,9 @@ export function getUserList() {
   const localData = getLocalData();
   const result = [];
   for (let key in localData.users) {
-    result.push(localData.users[key]);
+    if (localData.users[key].role !== 'admin') {
+      result.push(localData.users[key]);
+    }
   }
 
   return result;
