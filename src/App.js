@@ -9,7 +9,8 @@ import AdminLandingPage from './pages/admin/admin-landing-page/admin-landing.pag
 import { checkLocalStorage } from './shared/services/local-storage.service';
 import { checkProduct } from './shared/services/product.service';
 import { useEffect } from 'react';
-import BuyerLandingPage from './pages/buyer/buyes-landing-page/buyer-landing.page';
+import BuyerLandingPage from './pages/buyer/buyer-landing-page/buyer-landing.page';
+import BuyerAddTransactionPage from './pages/buyer/buyer-add-transaction/buyer-add-transaction.page';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/'><LoginPage /></Route>
           <Route exact path='/admin-landing'><AdminLandingPage /></Route>
           <Route exact path='/buyer-landing'><BuyerLandingPage /></Route>
+          <Route exact path='/buyer-add-transaction/:productId'><BuyerAddTransactionPage /></Route>
         </Switch>
       </div>
     </Router>

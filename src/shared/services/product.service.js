@@ -48,3 +48,7 @@ export function getProductList() {
 
   return result;
 }
+
+export function getProductById(productId) {
+  return getProductFromLocal()[productId];
+}
