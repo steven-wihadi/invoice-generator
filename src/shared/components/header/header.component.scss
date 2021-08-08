@@ -1,0 +1,32 @@
+.header-container {
+	width: calc(100% - 32px);
+	height: 54px;
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 16px;
+
+  h1 {
+    text-align: center;
+    color: #3a7ab3;
+    font-size: 20px;
+    margin: 0px;
+    align-self: center;
+
+    .invoice-text {
+      background-color: black;
+      color: white;
+      padding: 1px 10px;
+    }
+  }
+
+  .logout-navigator {
+    align-self: center;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
