@@ -11,6 +11,7 @@ import { checkProduct } from './shared/services/product.service';
 import { useEffect } from 'react';
 import BuyerLandingPage from './pages/buyer/buyer-landing-page/buyer-landing.page';
 import BuyerAddTransactionPage from './pages/buyer/buyer-add-transaction/buyer-add-transaction.page';
+import BuyerTrasactionHistory from './pages/buyer/buyer-transaction-history-page/buyer-transaction-history.page';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route exact path='/admin-landing'><AdminLandingPage /></Route>
           <Route exact path='/buyer-landing'><BuyerLandingPage /></Route>
           <Route exact path='/buyer-add-transaction/:productId'><BuyerAddTransactionPage /></Route>
+          <Route exact path='/buyer-transaction-history'><BuyerTrasactionHistory /></Route>
         </Switch>
       </div>
     </Router>

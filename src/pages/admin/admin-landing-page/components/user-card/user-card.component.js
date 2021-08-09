@@ -2,6 +2,7 @@ import './user-card.component.scss';
 import PersonLogo from '../../../../../assets/imgs/user.png';
 
 function UserCardComponent(props) {
+
   const userData = props.userData;
 
   return (

@@ -63,6 +63,15 @@ export function addTransactionToBuyer(buyerUsername, transactionDetail) {
   }
 }
 
+export function getTransactionByBuyerId(buyerUsername) {
+  const localData = getLocalData();
+  if (localData.users[buyerUsername] && localData.users[buyerUsername].role === 'buyer') {
+    return (localData.users[buyerUsername].transaction) ? localData.users[buyerUsername].transaction : [];
+  } else {
+    return [];
+  }
+}
+
 export function generateDate() {
   const day = new Date().getDate();
   const month = new Date().getMonth();

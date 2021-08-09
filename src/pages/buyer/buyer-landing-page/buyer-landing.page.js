@@ -4,10 +4,12 @@ import ProductCardComponent from './compoents/product-card/product-card.componen
 import { useEffect } from 'react';
 import { getProductList } from '../../../shared/services/product.service';
 import { useState } from 'react';
+import { useHistory } from "react-router-dom";
 
 function BuyerLandingPage() {
 
   const [ productList, setProductList ] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     getProductListFromLocale();
@@ -21,7 +23,7 @@ function BuyerLandingPage() {
     <div className="buyer-landing-page-container">
       <Header />
       <div className="buyer-landing-content-wrapper">
-        <button className="transaction-history-btn">Transaction History</button>
+        <button className="transaction-history-btn" onClick={ () => history.push("/buyer-transaction-history") }>Transaction History</button>
 
         <div className="product-list">
           { productList &&
