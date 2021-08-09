@@ -3,6 +3,7 @@ import Header from '../../../shared/components/header/header.component';
 import { getTransactionByBuyerId, getUserLogin } from '../../../shared/services/local-storage.service';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import TransactionCardComponent from './components/transaction-card/transaction-card.component';
 
 function BuyerTrasactionHistory() {
 
@@ -23,17 +24,7 @@ function BuyerTrasactionHistory() {
           <div className="list-content">
             { transactionList &&
               transactionList.map((transaction) => 
-              <div className="transaction-card">
-                <div className="transaction-info">
-                  <span className="transaction-name">
-                    { transaction.productName }
-                    <div className="transaction-type">
-                      <span className="">{ transaction.status }</span>
-                    </div>
-                  </span>
-                </div>
-                <span className='transaction-date'>{ transaction.createdAt }</span>
-              </div>
+                <TransactionCardComponent transaction={ transaction } />
               )
             }
           </div>

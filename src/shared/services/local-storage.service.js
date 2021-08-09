@@ -72,6 +72,31 @@ export function getTransactionByBuyerId(buyerUsername) {
   }
 }
 
+export function getAllTransaction() {
+  const localData = getLocalData();
+  let result = [];
+  for (let key in localData.users) {
+    if (localData.users[key].role === 'buyer' && localData.users[key].transaction) {
+      localData.users[key].transaction.forEach((transaction, index) => {
+      const data = transaction;
+      data.buyerUsername = key;
+      data.transactionIndex = index
+      result.push(data);
+      });
+    }
+  }
+  printLocaleDataStatus();
+  return result;
+}
+
+export function makeInvoiceByBuyerUsername(buyerUsername, transactionIndex) {
+  const localData = getLocalData();
+  localData.users[buyerUsername].transaction[transactionIndex].status = 'Approve';
+  localData.users[buyerUsername].transaction[transactionIndex].approvaDate = generateDate();
+  localData.users[buyerUsername].transaction[transactionIndex].approveWith = getUserLogin().username;
+  localStorage.setItem('invoice-app-data', JSON.stringify(localData));
+}
+
 export function generateDate() {
   const day = new Date().getDate();
   const month = new Date().getMonth();

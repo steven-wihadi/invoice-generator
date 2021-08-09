@@ -24,36 +24,6 @@
       padding: 12px 8px;
       border-radius: 0px 4px 4px 4px;
       overflow: auto;
-
-      .transaction-card {
-        display: flex;
-        padding: 8px 16px;
-        border-bottom: 1px dashed black;
-
-        .transaction-info {
-          .transaction-name {
-            display: block;
-            font-weight: bold;
-          }
-
-          .transaction-type {
-            background-color: #44a8ff;
-            color: white;
-            padding: 0px 8px;
-            border-radius: 8px;
-            display: inline-flex;
-            margin-left: 8px;
-
-            span { font-size: 12px; }
-          }
-
-        }
-
-        .transaction-date {
-          margin-left: auto;
-          
-        }
-      }
     }
   }
 }

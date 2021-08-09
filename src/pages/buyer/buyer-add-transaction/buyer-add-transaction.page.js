@@ -5,8 +5,10 @@ import { getProductById } from "../../../shared/services/product.service";
 import { getUserLogin, addTransactionToBuyer, generateDate } from "../../../shared/services/local-storage.service";
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useHistory } from "react-router-dom";
 
 function BuyerAddTransactionPage() {
+  const history = useHistory();
   const { productId } = useParams();
   const [ product, setProduct ] = useState();
   const [ quantity, setQuantity ] = useState(1);
@@ -22,11 +24,13 @@ function BuyerAddTransactionPage() {
       quantity,
       totalPrice: product.price * quantity,
       createdAt: generateDate(),
-      status: 'waiting_for_approval',
-      approvaDate: ''
+      status: 'Waiting for approval',
+      approvaDate: '',
+      approveWith: ''
     };
     const buyerUsername = getUserLogin().username;
     addTransactionToBuyer(buyerUsername, transactionDetail);
+    history.push("/buyer-landing");
   }
 
   return (

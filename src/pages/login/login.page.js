@@ -15,6 +15,7 @@ function LoginPage() {
       switch(userLogin.role) {
         case 'admin': history.push("/admin-landing"); break;
         case 'buyer': history.push("/buyer-landing"); break;
+        case 'seller': history.push("/seller-landing"); break;
       }
     }
   }, []);
@@ -26,6 +27,7 @@ function LoginPage() {
       switch(localData.users[username].role) {
         case 'admin': history.push("/admin-landing"); break;
         case 'buyer': history.push("/buyer-landing"); break;
+        case 'seller': history.push("/seller-landing"); break;
       }
     }
   }
